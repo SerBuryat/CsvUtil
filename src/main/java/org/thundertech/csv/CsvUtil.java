@@ -8,7 +8,7 @@ import java.nio.file.StandardOpenOption;
 
 public class CsvUtil {
 
-    private static void divideCsv(String csvFilePath, String quote, String header, int maxSizeBytes,
+    public static void divideCsv(String csvFilePath, String quote, String header, int maxSizeBytes,
                                   String pathToSave) throws IOException {
 
         String newLine = System.lineSeparator();
