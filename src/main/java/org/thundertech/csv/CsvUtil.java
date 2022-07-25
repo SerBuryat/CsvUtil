@@ -1,21 +1,21 @@
 package org.thundertech.csv;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class CsvUtil {
 
-    public static void divideCsv(String csvFilePath, String quote, String header, int maxSizeBytes,
-                                  String pathToSave) throws IOException {
+    public static void divideCsv(File file, String quote, String header, int maxSizeBytes,
+                                 String pathToSave) throws IOException {
 
-        String newLine = System.lineSeparator();
-        String containsTwoQuoteSymbol = "(.?|.+)" + quote + "(.?|.+)" + quote + "(.?|.+)";
-        Path filePath = Paths.get("");
+        var newLine = System.lineSeparator();
+        var containsTwoQuoteSymbol = "(.?|.+)" + quote + "(.?|.+)" + quote + "(.?|.+)";
+        var filePath = Paths.get("");
         int fileCounter = 0;
-        var csvLines = Files.lines(Paths.get(csvFilePath)).skip(1).toList();
+        var csvLines = Files.lines(Paths.get(file.getAbsolutePath())).skip(1).toList();
         int quoteCounter = 0;
         boolean isOverSized = true;
 
