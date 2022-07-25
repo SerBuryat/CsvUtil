@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class Csv {
+public class CsvUtil {
 
     private static void divideCsv(String csvFilePath, String quote, String header, int maxSizeBytes,
                                   String pathToSave) throws IOException {
